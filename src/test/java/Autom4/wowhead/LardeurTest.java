@@ -5,7 +5,9 @@ import java.io.FileNotFoundException;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class LardeurTest {
@@ -20,19 +22,19 @@ public class LardeurTest {
 
 	String File1 = "Item1";
 	
-	private String BROWSER = "";
+	private String BROWSER = System.getProperty("ChromeDriver");;
 	
 	@Test
 	public void lardeurStuff() throws InterruptedException, FileNotFoundException {
 		
 		if(BROWSER.equals("chrome")) {
-			BROWSER=System.getProperty("ChromeDriver");
+			driver = new ChromeDriver();
 		}
 		else if(BROWSER.equals("firefox")) {
-			BROWSER=System.getProperty("FirefoxDriver");
+			driver= new FirefoxDriver();
 		}
 		else {
-			BROWSER=System.getProperty("InternetExplorerDriver");
+			driver = new InternetExplorerDriver();
 		}
 		
 		PageAccueil pageAccueil = PageFactory.initElements(driver, PageAccueil.class);
