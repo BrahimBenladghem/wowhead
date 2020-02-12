@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LardeurTest {
 
-	WebDriver driver = new FirefoxDriver();
+	private WebDriver driver;
 	String Mob = "Lardeur";
 	String Item1 = "Chahuteur";
 	String Item2 = "Chausses";
@@ -19,6 +19,20 @@ public class LardeurTest {
 	String Item5 = "Espauliers";
 
 	String File1 = "Item1";
+	
+	private String BROWSER = "";
+	
+	public void chooseBrowser() {
+		if(BROWSER.equals("chrome")) {
+			BROWSER=System.getProperty("ChromeDriver");
+		}
+		else if(BROWSER.equals("firefox")) {
+			BROWSER=System.getProperty("FirefoxDriver");
+		}
+		else {
+			BROWSER=System.getProperty("InternetExplorerDriver");
+		}
+	}
 
 	@Test
 	public void lardeurStuff() throws InterruptedException, FileNotFoundException {
