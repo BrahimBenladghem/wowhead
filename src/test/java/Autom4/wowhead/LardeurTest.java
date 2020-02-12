@@ -11,6 +11,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public class LardeurTest {
+	
+	private String BROWSER = System.getProperty("browser");
 
 	private WebDriver driver;
 	String Mob = "Lardeur";
@@ -22,7 +24,6 @@ public class LardeurTest {
 
 	String File1 = "Item1";
 	
-	private String BROWSER = System.getProperty("browser");;
 	
 	@Test
 	public void lardeurStuff() throws InterruptedException, FileNotFoundException {
