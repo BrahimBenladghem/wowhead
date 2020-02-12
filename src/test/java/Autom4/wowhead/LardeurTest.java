@@ -22,7 +22,7 @@ public class LardeurTest {
 
 	String File1 = "Item1";
 	
-	private String BROWSER = System.getProperty("ChromeDriver");;
+	private String BROWSER = System.getProperty("browser");;
 	
 	@Test
 	public void lardeurStuff() throws InterruptedException, FileNotFoundException {
