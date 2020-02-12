@@ -22,7 +22,9 @@ public class LardeurTest {
 	
 	private String BROWSER = "";
 	
-	public void chooseBrowser() {
+	@Test
+	public void lardeurStuff() throws InterruptedException, FileNotFoundException {
+		
 		if(BROWSER.equals("chrome")) {
 			BROWSER=System.getProperty("ChromeDriver");
 		}
@@ -32,10 +34,7 @@ public class LardeurTest {
 		else {
 			BROWSER=System.getProperty("InternetExplorerDriver");
 		}
-	}
-
-	@Test
-	public void lardeurStuff() throws InterruptedException, FileNotFoundException {
+		
 		PageAccueil pageAccueil = PageFactory.initElements(driver, PageAccueil.class);
 		PageRecherchePNJ pageRecherchePNJ = pageAccueil.rechercheLardeur(driver, Mob);
 		PagePNJ pagePNJ = pageRecherchePNJ.resultatLardeur(driver);
